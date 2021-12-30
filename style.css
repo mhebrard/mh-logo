@@ -1,0 +1,30 @@
+/* CSS variables 
+ * Define color scheme
+ */
+:root {
+  --background: #3a3937;
+  --primary: #ce873d;
+  --secondary: #949494;
+}
+/* Remove margin
+ * Set background
+ */
+body {
+  margin: 0;
+  background-color: var(--background);
+}
+
+/* Move and resize the wallpaper 
+ * to place the H conveniently 
+ */
+.wallpaper {
+  position: absolute;
+  left: -340px;
+  top: -40px;
+  height: 700px;
+}
+
+/* Place the SVG on top of the wallpaper */
+.svg {
+  position: absolute;
+}
