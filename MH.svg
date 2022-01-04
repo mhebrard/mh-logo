@@ -1,34 +1,109 @@
 <svg version="1.1"
   width="1920" height="1080"
   xmlns="http://www.w3.org/2000/svg"
-  ><!-- Size the SVG as a HD wallpaper -->
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  ><!-- Size the SVG as a HD wallpaper & add xlink-->
+
+  <defs>
+
+    <!-- The path below define the contour of the M
+     it required an id to be use in the body of the SVG
+     it is also include in a clipPath to crop the fill path
+     -->
+    <clipPath id="clipM">
+      <path id="shapeM" fill="none" stroke="#ce873d" stroke-width="5"
+        d="M220 550 l-30 -30 v-370
+        l-10 -10 -50 50 -20 -20 90 -90 50 50
+        l80 80 60 -60
+        l-30 -30 40 -40 50 50 v340
+        l10 10 50 -50 20 20 -90 90 -50 -50
+        v-170 -60 l-60 60 -80 -80 
+        v280 z
+        "
+      />
+    </clipPath>
+
+    <!-- The path below define the contour of the H
+     it required an id to be use in the body of the SVG
+     it is also include in a clipPath to crop the fill path
+     -->
+    <clipPath id="clipH">
+      <path id="shapeH" fill="none" stroke="#ce873d" stroke-width="5"
+        d="M220 550 l-30 -30 v-370
+        l-10 -10 -50 50 -20 -20 90 -90 50 50
+        v170 l80 -80 v-70
+        l-30 -30 40 -40 50 50 v340
+        l10 10 50 -50 20 20 -90 90 -50 -50
+        v-170 l-80 80 v120 z
+        "
+      />
+    </clipPath>
+
+    <!-- The path below define a code representation
+     it is used to fill the letters defined above
+     -->
+    <g id="Fill">
+      <path fill="none" stroke="#949494" stroke-width="5"
+        d="M120 90 h20 m10 0 h30 m10 0 h60 M330 90 h50
+        M120 100 h20 m10 0 h60 M330 100 h120
+        M120 110 h20 m10 0 h40 m10 0 h30 M330 110 h30 m10 0 h60
+        M120 120 h20 m10 0 h40 m10 0 h50 M330 120 h30 m10 0 h30 m10 0 h30
+        M120 130 h20 m10 0 h10 m10 0 h20
+        M120 150 h10 m10 0 h70 m10 0 h40 M330 150 h10
+        M120 160 h10 m10 0 h30 m10 0 h30 M330 160 m20 0 h20 m10 0 h30 m10 0 h60
+        M190 170 m20 0 h20 m10 0 h20 m10 0 h20 M330 170 m20 0 h10 m10 0 h30 m10 0 h10 m10 0 h30
+        M190 180 m20 0 h40 m10 0 h40 M330 180 m20 0 h30 m10 0 h30 m10 0 h20
+        M190 190 m20 0 h10
+        M190 200 m20 0 h10
+        M190 210 m20 0 h20 m10 0 h20 M330 210 h10
+        M190 220 h10 M330 220 m20 0 h10 m10 0 h20
+        M190 230 h10 m10 0 h60 m10 0 h30 M330 230 m20 0 h10 m10 0 h30 m10 0 h10 m10 0 h20
+        M190 240 h100
+        M190 260 h10 M330 260 h10 m10 0 h100
+        M190 270 m20 0 h20 m10 0 h30 M330 270 h30 m10 0 h30 m10 0 h50
+        M190 280 m20 0 h10 m10 0 h20 m10 0 h20 m10 0 h20
+        M190 290 m20 0 h10 m10 0 h30 m10 0 h30
+        M190 300 m20 0 h10 m10 0 h30 m10 0 h30 M330 300 h10
+        M190 310 m20 0 h10 m10 0 h30 m10 0 h30 M330 310 m20 0 h20 m10 0 h40
+        M190 320 m20 0 h10 m10 0 h20 m10 0 h50 M330 320 m20 0 h20 m10 0 h40
+        M190 330 h10 m10 0 h20 M330 330 m20 0 h30 m10 0 h30 m10 0 h40
+        M190 350 h20 m10 0 h40 m10 0 h10 m10 0 h20
+        M190 360 h30 m10 0 h10 m10 0 h50 M330 360 h20 m10 0 h30 m10 0 h60
+        M190 370 h10 m10 0 h40 M330 370 h10 m10 0 h40 m10 0 h20
+        M190 390 h10
+        M190 400 m20 0 h20 m10 0 h30 M330 400 h10
+        M190 410 m20 0 h10 m10 0 h20 M330 410 m20 0 h20 m10 0 h30
+        M190 420 m20 0 h10 m10 0 h20 M330 420 m20 0 h20 m10 0 h30
+        M190 430 m20 0 h20 m10 0 h20 M330 430 m20 0 h20 m10 0 h30
+        M190 440 h10 M330 440 m20 0 h40 m10 0 h30 m10 0 h20
+        M190 460 h10
+        M190 470 m20 0 h30 M330 470 h10 m10 0 h60 m10 0 h10 m10 0 h20 m10 0 h30
+        M190 480 m20 0 h10 m10 0 h20 M330 480 h20 m10 0 h50 m10 0 h20 m10 0 h60
+        M190 490 m20 0 h20 m10 0 h20 M330 490 h10 m10 0 h20 m10 0 h30 m10 0 h40
+        M190 500 m20 0 h10 m10 0 h30 M330 500 h30 m10 0 h20 m10 0 h40 m10 0 h20
+        M190 510 m20 0 h30 m10 0 h20
+        M190 520 h10
+        M190 530 M330 530 m30 0 h100
+        M190 540 h30
+        "
+      />
+    </g>
+
+  </defs>
 
   <!-- Show SVG contour -->
   <rect width="100%" height="100%" fill="none" stroke="red" />
 
-  <g id="M" transform="translate(0, 0)">
-    <path fill="none" stroke="pink" stroke-width="5"
-      d="M220 550 l-30 -30 v-370
-      l-10 -10 -50 50 -20 -20 90 -90 50 50
-      l80 80 60 -60
-      l-30 -30 40 -40 50 50 v340
-      l10 10 50 -50 20 20 -90 90 -50 -50
-      v-170 -60 l-60 60 -80 -80 
-      v280 z
-      "
-    />
+  <g id="M">
+    <!-- The fill is used before the contour to ensure appropriate z-index -->
+    <use href="#Fill" clip-path="url(#clipM)" />
+    <use href="#shapeM"/>
   </g>
 
   <g id="H" transform="translate(400, 0)">
-    <path fill="none" stroke="pink" stroke-width="5"
-      d="M220 550 l-30 -30 v-370
-      l-10 -10 -50 50 -20 -20 90 -90 50 50
-      v170 l80 -80 v-70
-      l-30 -30 40 -40 50 50 v340
-      l10 10 50 -50 20 20 -90 90 -50 -50
-      v-170 l-80 80 v120 z
-      "
-    />
+    <!-- The fill is used before the contour to ensure appropriate z-index -->
+    <use href="#Fill" clip-path="url(#clipH)" />
+    <use href="#shapeH"/>
   </g>
 
 </svg>
