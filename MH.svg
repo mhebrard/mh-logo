@@ -4,6 +4,15 @@
   xmlns:xlink="http://www.w3.org/1999/xlink">
   ><!-- Size the SVG as a HD wallpaper & add xlink-->
 
+  <style>
+    svg {
+      color: #ccffff;
+    }
+    .accent {
+      color: #55ffff;
+    }
+  </style>
+
   <defs>
 
     <!-- The path below define the contour of the M
@@ -11,7 +20,7 @@
      it is also include in a clipPath to crop the fill path
      -->
     <clipPath id="clipM">
-      <path id="shapeM" fill="none" stroke="#ce873d" stroke-width="5"
+      <path id="shapeM" class="accent" fill="none" stroke="currentColor" stroke-width="5"
         d="M220 550 l-30 -30 v-370
         l-10 -10 -50 50 -20 -20 90 -90 50 50
         l80 80 60 -60
@@ -28,7 +37,7 @@
      it is also include in a clipPath to crop the fill path
      -->
     <clipPath id="clipH">
-      <path id="shapeH" fill="none" stroke="#ce873d" stroke-width="5"
+      <path id="shapeH" class="accent" fill="none" stroke="currentColor" stroke-width="5"
         d="M220 550 l-30 -30 v-370
         l-10 -10 -50 50 -20 -20 90 -90 50 50
         v170 l80 -80 v-70
@@ -43,7 +52,7 @@
      it is used to fill the letters defined above
      -->
     <g id="Fill">
-      <path fill="none" stroke="#949494" stroke-width="5" stroke-linecap="round"
+      <path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"
         d="M120 90 h20 m10 0 h30 m10 0 h60 M330 90 h50
         M120 100 h20 m10 0 h60 M330 100 h120
         M120 110 h20 m10 0 h40 m10 0 h30 M330 110 h30 m10 0 h60
@@ -91,7 +100,7 @@
 
     <!-- Mother board branches -->
     <g id="branchLeft">
-      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" 
         d="
         M170 170 v330
         M170 170 l-140 140
@@ -101,7 +110,7 @@
         M170 170 v80 l-30 30 v40 l-60 60
         M170 170 v80 l-30 30 v100 l-40 40 v30
         " />
-      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+      <g class="accent" fill="currentColor" stroke="currentColor" stroke-width="3" filter="url(#accent-glow)">
         <circle cx="170" cy="500" r="4"/>
         <circle cx="30" cy="310" r="4"/>
         <circle cx="70" cy="240" r="4"/>
@@ -113,7 +122,7 @@
     </g>
 
     <g id="branchRight">
-      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" 
         d="
         M410 440 v-360
         M410 440 v-320 l-50 -50
@@ -124,7 +133,7 @@
         M410 440 v-80 l30 -30 v-40 l60 -60
         M410 440 v-80 l30 -30 v-100 l40 -40 v-30
         " />
-      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+      <g class="accent" fill="currentColor" stroke="currentColor" stroke-width="3" filter="url(#accent-glow)">
         <circle cx="360" cy="70" r="4"/>
         <circle cx="410" cy="80" r="4"/>
         <circle cx="440" cy="150" r="4"/>
@@ -137,7 +146,7 @@
     </g>
 
     <g id="branchH">
-      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" 
         d="
         M270 250 v-190
         M270 250 v-140 l-40 -40
@@ -146,7 +155,7 @@
         M310 370 v140 l40 40
         M310 370 l-30 30
         " />
-      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+      <g class="accent" fill="currentColor" stroke="currentColor" stroke-width="3" filter="url(#accent-glow)">
         <circle cx="270" cy="60" r="4"/>
         <circle cx="230" cy="70" r="4"/>
         <circle cx="300" cy="220" r="4"/>
@@ -157,7 +166,7 @@
     </g>
 
     <g id="branchM">
-      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" 
         d="
         M330 180 v-40
         M330 180 l-100 -100
@@ -169,7 +178,7 @@
         M370 310 v120 l-30 30 v60
         M370 310 v180 l40 40
         " />
-      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+      <g class="accent" fill="currentColor" stroke="currentColor" stroke-width="3" filter="url(#accent-glow)">
         <circle cx="330" cy="140" r="4"/>
         <circle cx="230" cy="80" r="4"/>
         <circle cx="370" cy="550" r="4"/>
@@ -183,19 +192,31 @@
       </g>
     </g>
 
+    <!-- Bloom effect -->
+    <filter id="accent-glow" class="accent" x="-50%" y="-50%" width="200%" height="200%">
+      <feFlood result="flood" flood-color="currentColor" flood-opacity="1"></feFlood>
+      <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
+      <feMorphology in="mask" result="dilated" operator="dilate" radius="3"></feMorphology>
+      <feGaussianBlur in="dilated" result="blurred" stdDeviation="6"></feGaussianBlur>
+      <feMerge>
+          <feMergeNode in="blurred"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
   </defs>
 
   <!-- Show SVG contour -->
-  <rect width="100%" height="100%" fill="none" stroke="red" />
-
+  <rect width="100%" height="100%" fill="#000" stroke="red" />
+  
   <g id="M" transform="translate(0, 0)">
-    <use href="#branchLeft" />
+    <use href="#branchLeft"/>
     <use href="#branchM" />
     <use href="#branchRight" transform="translate(60,0)"/>
     <!-- The fill is used before the contour to ensure appropriate z-index -->
-    <use href="#Fill" clip-path="url(#clipM)" />
-    <use href="#shapeM"/>
-  </g>
+    <use href="#Fill" clip-path="url(#clipM)"/>
+    <use href="#shapeM" filter="url(#accent-glow)"/>
+  </g> 
 
   <g id="H" transform="translate(700, 0)">
     <use href="#branchLeft" />
@@ -203,7 +224,7 @@
     <use href="#branchRight" />
     <!-- The fill is used before the contour to ensure appropriate z-index -->
     <use href="#Fill" clip-path="url(#clipH)" />
-    <use href="#shapeH"/>
+    <use href="#shapeH" filter="url(#accent-glow)"/>
   </g>
-
+  
 </svg>
