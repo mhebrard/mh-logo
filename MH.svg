@@ -43,7 +43,7 @@
      it is used to fill the letters defined above
      -->
     <g id="Fill">
-      <path fill="none" stroke="#949494" stroke-width="5"
+      <path fill="none" stroke="#949494" stroke-width="5" stroke-linecap="round"
         d="M120 90 h20 m10 0 h30 m10 0 h60 M330 90 h50
         M120 100 h20 m10 0 h60 M330 100 h120
         M120 110 h20 m10 0 h40 m10 0 h30 M330 110 h30 m10 0 h60
@@ -89,18 +89,118 @@
       />
     </g>
 
+    <!-- Mother board branches -->
+    <g id="branchLeft">
+      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+        d="
+        M170 170 v330
+        M170 170 l-140 140
+        M170 170 m-40 40 h-30 l-30 30
+        M170 170 m-80 80 v30 l-30 30
+        M170 170 v80 l-30 30 v180
+        M170 170 v80 l-30 30 v40 l-60 60
+        M170 170 v80 l-30 30 v100 l-40 40 v30
+        " />
+      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+        <circle cx="170" cy="500" r="4"/>
+        <circle cx="30" cy="310" r="4"/>
+        <circle cx="70" cy="240" r="4"/>
+        <circle cx="60" cy="310" r="4"/>
+        <circle cx="140" cy="460" r="4"/>
+        <circle cx="80" cy="380" r="4"/>
+        <circle cx="100" cy="450" r="4"/>
+      </g>
+    </g>
+
+    <g id="branchRight">
+      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+        d="
+        M410 440 v-360
+        M410 440 v-320 l-50 -50
+        M410 440 l140 -140
+        M410 440 m40 -40 h30 l30 -30
+        M410 440 m80 -80 v-30 l30 -30
+        M410 440 v-80 l30 -30 v-180
+        M410 440 v-80 l30 -30 v-40 l60 -60
+        M410 440 v-80 l30 -30 v-100 l40 -40 v-30
+        " />
+      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+        <circle cx="360" cy="70" r="4"/>
+        <circle cx="410" cy="80" r="4"/>
+        <circle cx="440" cy="150" r="4"/>
+        <circle cx="480" cy="160" r="4"/>
+        <circle cx="500" cy="230" r="4"/>
+        <circle cx="520" cy="300" r="4"/>
+        <circle cx="550" cy="300" r="4"/>
+        <circle cx="510" cy="370" r="4"/>
+      </g>
+    </g>
+
+    <g id="branchH">
+      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+        d="
+        M270 250 v-190
+        M270 250 v-140 l-40 -40
+        M270 250 l30 -30
+        M310 370 v190
+        M310 370 v140 l40 40
+        M310 370 l-30 30
+        " />
+      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+        <circle cx="270" cy="60" r="4"/>
+        <circle cx="230" cy="70" r="4"/>
+        <circle cx="300" cy="220" r="4"/>
+        <circle cx="310" cy="560" r="4"/>
+        <circle cx="350" cy="550" r="4"/>
+        <circle cx="280" cy="400" r="4"/>
+      </g>
+    </g>
+
+    <g id="branchM">
+      <path fill="none" stroke="#949494" stroke-width="3" stroke-linecap="round" 
+        d="
+        M330 180 v-40
+        M330 180 l-100 -100
+        M370 310 v240
+        M370 310 l-30 30
+        M370 310 v40 l-60 60
+        M370 310 v40 l-30 30 v30 l-60 60
+        M370 310 v120 l-70 70
+        M370 310 v120 l-30 30 v60
+        M370 310 v180 l40 40
+        " />
+      <g fill="#3a3937" stroke="#ce873d" stroke-width="3">
+        <circle cx="330" cy="140" r="4"/>
+        <circle cx="230" cy="80" r="4"/>
+        <circle cx="370" cy="550" r="4"/>
+        <circle cx="340" cy="340" r="4"/>
+        <circle cx="310" cy="410" r="4"/>
+        <circle cx="280" cy="470" r="4"/>
+        <circle cx="300" cy="500" r="4"/>
+        <circle cx="340" cy="520" r="4"/>
+        <circle cx="410" cy="530" r="4"/>
+        
+      </g>
+    </g>
+
   </defs>
 
   <!-- Show SVG contour -->
   <rect width="100%" height="100%" fill="none" stroke="red" />
 
-  <g id="M">
+  <g id="M" transform="translate(0, 0)">
+    <use href="#branchLeft" />
+    <use href="#branchM" />
+    <use href="#branchRight" transform="translate(60,0)"/>
     <!-- The fill is used before the contour to ensure appropriate z-index -->
     <use href="#Fill" clip-path="url(#clipM)" />
     <use href="#shapeM"/>
   </g>
 
-  <g id="H" transform="translate(400, 0)">
+  <g id="H" transform="translate(700, 0)">
+    <use href="#branchLeft" />
+    <use href="#branchH" />
+    <use href="#branchRight" />
     <!-- The fill is used before the contour to ensure appropriate z-index -->
     <use href="#Fill" clip-path="url(#clipH)" />
     <use href="#shapeH"/>
